@@ -1,3 +1,7 @@
 gateway-helm:
   service:
     type: ClusterIP
+  
+  configs:
+    params:
+      server.insecure: true
