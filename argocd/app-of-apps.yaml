@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
-    path: applications
+    path: argocd/applications
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
