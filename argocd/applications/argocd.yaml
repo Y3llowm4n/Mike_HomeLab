@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
-    path: charts/apps/argocd
+    path: charts/apps/argocd/chart
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
