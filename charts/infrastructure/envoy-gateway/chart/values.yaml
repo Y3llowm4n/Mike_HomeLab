@@ -11,7 +11,7 @@ gateway:
   namespace: envoy-gateway-system
 
 hostnames:
-  - argocd.homelab
+  argocd.homelab
 
 services:
- - argocd-server
+  argocd-server
