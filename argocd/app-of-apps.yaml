@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/y3llowm4n/homelab-gitops.git
+    repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
     path: applications
   destination:
