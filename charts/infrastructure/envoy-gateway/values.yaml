@@ -1,0 +1,3 @@
+gateway-helm:
+  service:
+    type: LoadBalancer
