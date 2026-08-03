@@ -1,17 +1,3 @@
 gateway-helm:
   service:
     type: ClusterIP
-  
-  configs:
-    params:
-      server.insecure: true
-
-gateway:
-  name: main-gateway
-  namespace: envoy-gateway-system
-
-hostnames:
-  argocd.homelab
-
-services:
-  argocd-server

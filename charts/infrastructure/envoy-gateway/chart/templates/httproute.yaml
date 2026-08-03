@@ -5,12 +5,16 @@ metadata:
   namespace: argocd
 spec:
   hostnames:
-  - {{ .Values.hostnames }}
+    - argocd.homelab
   parentRefs:
-    - name: {{ .Values.gateway.name }}
-      namespace: {{ .Values.gateway.namespace }}
+    - name: main-gateway
+      namespace: envoy-gateway-system
   rules:
     - backendRefs:
         - group: ''
-          name: {{ .Values.services }}
+          name: argocd-server
           port: 80
+  
+
+
+  
