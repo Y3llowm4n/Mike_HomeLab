@@ -6,8 +6,8 @@ coredns:
   service:
     type: LoadBalancer
     # Optional: request a specific IP from your Cilium pool instead of the next free one
-    # annotations:
-    #   io.cilium/lb-ipam-ips: "192.168.178.222"
+    annotations:
+      io.cilium/lb-ipam-ips: "192.168.178.222"
 
   servers:
     - zones:
