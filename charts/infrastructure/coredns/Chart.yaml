@@ -1,0 +1,10 @@
+apiVersion: v2
+name: coredns-wrapper
+description: Deploy coredns
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: coredns-helm
+    version: 1.47.0
+    repository: https://coredns.github.io/helm
