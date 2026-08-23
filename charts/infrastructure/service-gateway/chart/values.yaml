@@ -1,7 +1,6 @@
-service-gateway:
-  routes:
-    - name: argocd
-      staticIP: "192.168.178.221"
-      backendNamespace: argocd
-      backendServiceName: argocd-server
-      backendServicePort: 80
+routes:
+  - name: argocd
+    staticIP: "192.168.178.221"
+    backendNamespace: argocd
+    backendServiceName: argocd-server
+    backendServicePort: 80
