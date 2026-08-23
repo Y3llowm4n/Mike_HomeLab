@@ -4,8 +4,6 @@ metadata:
   name: argocd-route
   namespace: argocd
 spec:
-  hostnames:
-    - argocd.homelab
   parentRefs:
     - name: main-gateway
       namespace: envoy-gateway-system
@@ -17,7 +15,6 @@ spec:
         - path:
             type: PathPrefix
             value: /
-  
 
 
   
