@@ -9,4 +9,4 @@ argo-cd:
           - '.spec.parentRefs[].kind'
           - '.spec.rules[].backendRefs[].group'
           - '.spec.rules[].backendRefs[].kind'
-          - '.spec.rules[].backendRefs[].weight'
+          - '.spec.rules[].backendRefs[].weight'd
