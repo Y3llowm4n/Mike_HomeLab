@@ -1,4 +1,4 @@
-coredns-helm:
+coredns:
   isClusterService: false
 
   replicaCount: 1
