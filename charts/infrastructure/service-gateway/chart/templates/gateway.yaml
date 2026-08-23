@@ -1,10 +1,14 @@
+{{- range .Values.routes }}
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: main-gateway
+  name: {{ .name }}-gateway
   namespace: envoy-gateway-system
 spec:
   gatewayClassName: envoy-gateway
+  infrastructure:
+    annotations:
+      io.cilium/lb-ipam-ips: "{{ .staticIP }}"
   listeners:
     - name: http
       protocol: HTTP
@@ -12,3 +16,5 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+---
+{{- end }}
