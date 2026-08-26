@@ -1,5 +1,9 @@
 vaultwarden:
-  domain: "http://192.168.178.222"
+  domain: "https://192.168.178.222"
+
+  adminToken:
+    existingSecret: vaultwarden-admin
+    existingSecretKey: ADMIN_TOKEN
 
   data:
     name: "vaultwarden-data"
