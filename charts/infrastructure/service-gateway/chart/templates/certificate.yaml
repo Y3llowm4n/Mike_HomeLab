@@ -1,0 +1,15 @@
+{{- range .Values.routes }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .name }}-tls
+  namespace: envoy-gateway-system
+spec:
+  secretName: {{ .name }}-tls
+  ipAddresses:
+    - {{ .staticIP }}
+  issuerRef:
+    name: homelab-ca
+    kind: ClusterIssuer
+---
+{{- end }}

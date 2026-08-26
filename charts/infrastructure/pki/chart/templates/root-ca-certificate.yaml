@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: homelab-root-ca
+  namespace: cert-manager
+spec:
+  isCA: true
+  commonName: Homelab Root CA
+  secretName: homelab-root-ca-secret
+  duration: 87600h
+  renewBefore: 720h
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: selfsigned-bootstrap
+    kind: ClusterIssuer

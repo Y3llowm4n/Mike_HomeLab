@@ -1,0 +1,5 @@
+apiVersion: v2
+name: pki
+description: Homelab self-signed root CA bootstrap for cert-manager
+type: application
+version: 0.1.0
