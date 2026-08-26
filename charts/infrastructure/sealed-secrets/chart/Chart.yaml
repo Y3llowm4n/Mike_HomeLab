@@ -1,0 +1,10 @@
+apiVersion: v2
+name: sealed-secrets
+description: Deploy Sealed Secrets controller
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: sealed-secrets
+    version: 2.17.7
+    repository: https://bitnami.github.io/sealed-secrets
