@@ -1,0 +1,5 @@
+apiVersion: v2
+name: local-path-provisioner
+description: Local Path Provisioner (hostPath-backed dynamic storage)
+type: application
+version: 0.1.0
