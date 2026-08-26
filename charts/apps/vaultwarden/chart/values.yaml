@@ -1,0 +1,16 @@
+vaultwarden:
+  domain: "http://192.168.178.222"
+
+  data:
+    name: "vaultwarden-data"
+    size: "2Gi"
+    class: "manual"
+    path: "/data"
+
+  resources:
+    requests:
+      cpu: 250m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi

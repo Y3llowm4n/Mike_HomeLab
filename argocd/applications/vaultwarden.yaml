@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: local-path-provisioner
+  name: vaultwarden
   namespace: argocd
   labels:
-    category: infra
+    category: apps
 spec:
   project: default
   source:
     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
-    path: charts/infrastructure/local-path-provisioner/chart
+    path: charts/apps/vaultwarden/chart
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: local-path-storage
+    namespace: vaultwarden
   syncPolicy:
     automated:
       prune: true

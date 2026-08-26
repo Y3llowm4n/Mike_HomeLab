@@ -1,0 +1,10 @@
+apiVersion: v2
+name: vaultwarden
+description: Deploy Vaultwarden
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: vaultwarden
+    version: 0.22.1
+    repository: https://guerzon.github.io/vaultwarden
