@@ -1,0 +1,10 @@
+machine:
+  kubelet:
+    extraMounts:
+      - destination: /var/mnt/vaultwarden-data
+        type: bind
+        source: /var/mnt/vaultwarden-data
+        options:
+          - bind
+          - rshared
+          - rw
