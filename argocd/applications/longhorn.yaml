@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vaultwarden
+  name: longhorn
   namespace: argocd
   labels:
-    category: apps
+    category: infra
 spec:
   project: default
   source:
     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
-    path: charts/apps/vaultwarden/chart
+    path: charts/infrastructure/longhorn/chart
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: vaultwarden
+    namespace: longhorn-system
   syncPolicy:
     automated:
       prune: true
