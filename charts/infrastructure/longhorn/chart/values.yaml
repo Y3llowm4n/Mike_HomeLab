@@ -5,3 +5,6 @@ longhorn:
   defaultSettings:
     defaultDataPath: /var/mnt/longhorn
     defaultReplicaCount: 1
+
+  preUpgradeChecker:
+    jobEnabled: false
