@@ -16,17 +16,5 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    - name: https
-      protocol: HTTPS
-      port: 443
-      tls:
-        mode: Terminate
-        certificateRefs:
-          - kind: Secret
-            name: {{ .name }}-tls
-      allowedRoutes:
-        namespaces:
-          from: All
-
 ---
 {{- end }}

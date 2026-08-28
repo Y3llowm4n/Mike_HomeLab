@@ -4,8 +4,3 @@ routes:
     backendNamespace: argocd
     backendServiceName: argocd-server
     backendServicePort: 80
-  - name: vaultwarden
-    staticIP: "192.168.178.222"
-    backendNamespace: vaultwarden
-    backendServiceName: vaultwarden
-    backendServicePort: 80
