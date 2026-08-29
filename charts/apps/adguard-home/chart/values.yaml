@@ -1,0 +1,7 @@
+adguard-home:
+  fullnameOverride: adguard-home
+
+  service:
+    dns:
+      annotations:
+        io.cilium/lb-ipam-ips: "192.168.178.245"
