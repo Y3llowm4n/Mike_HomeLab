@@ -1,0 +1,10 @@
+apiVersion: v2
+name: adguard-home
+description: Deploy AdGuard Home
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: adguard-home
+    version: 1.5.1
+    repository: https://repo.helmforge.dev

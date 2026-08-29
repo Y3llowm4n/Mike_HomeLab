@@ -9,3 +9,8 @@ routes:
     backendNamespace: longhorn-system
     backendServiceName: longhorn-frontend
     backendServicePort: 80
+  - name: adguard-home
+    staticIP: "192.168.178.223"
+    backendNamespace: adguard-home
+    backendServiceName: adguard-home-web
+    backendServicePort: 80
