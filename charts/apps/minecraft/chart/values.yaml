@@ -25,6 +25,7 @@ minecraft:
     ENABLE_WHITELIST: "true"
     ENFORCE_WHITELIST: "true"
     SKIP_DOWNLOAD_DEFAULTS: "true"
+    USER_API_PROVIDER: "mojang"
 
   resources:
     requests:
