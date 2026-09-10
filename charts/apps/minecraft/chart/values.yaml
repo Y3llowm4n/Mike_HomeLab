@@ -31,3 +31,6 @@ minecraft:
       memory: "7Gi"
     limits:
       memory: "7Gi"
+  
+  extraPodSpec:
+    automountServiceAccountToken: "false"
