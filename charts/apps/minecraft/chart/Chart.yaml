@@ -1,0 +1,10 @@
+apiVersion: v2
+name: minecraft
+description: Deploy a Minecraft (Paper) server
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: minecraft
+    version: 5.2.0
+    repository: https://itzg.github.io/minecraft-server-charts
