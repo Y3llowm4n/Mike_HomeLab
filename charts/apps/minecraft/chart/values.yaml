@@ -24,6 +24,7 @@ minecraft:
   extraEnv:
     ENABLE_WHITELIST: "true"
     ENFORCE_WHITELIST: "true"
+    SKIP_DOWNLOAD_DEFAULTS: "true"
 
   resources:
     requests:
