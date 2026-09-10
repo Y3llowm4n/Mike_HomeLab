@@ -1,0 +1,35 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: minecraft-egress
+  namespace: {{ .Release.Namespace }}
+spec:
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/name: minecraft
+  egress:
+    # 1. DNS — allow queries to CoreDNS, and let Cilium's DNS proxy read the answers
+    #    (required: toFQDNs works by learning IPs from observed DNS responses)
+    - toEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: kube-dns
+      toPorts:
+        - ports:
+            - port: "53"
+              protocol: ANY
+          rules:
+            dns:
+              - matchPattern: "*"
+    # 2. HTTPS only to Mojang (player auth + assets) and Paper/Maven (first-boot jar download).
+    #    Everything else outbound is denied.
+    - toFQDNs:
+        - matchPattern: "*.mojang.com"
+        - matchPattern: "*.minecraft.net"
+        - matchPattern: "*.minecraftservices.com"
+        - matchPattern: "*.papermc.io"
+        - matchName: "repo1.maven.org"
+      toPorts:
+        - ports:
+            - port: "443"
+              protocol: TCP
