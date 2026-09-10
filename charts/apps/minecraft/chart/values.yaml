@@ -1,0 +1,33 @@
+minecraft:
+  minecraftServer:
+    eula: "TRUE"
+    type: "PAPER"
+    version: "26.2"
+    memory: "6144M"
+    motd: "BudgetGhandi's server"
+    difficulty: "normal"
+    ops: "BudgetGhandi"
+    whitelist: ""
+    serviceType: "LoadBalancer"
+    rcon:
+      enabled: true
+      withGeneratedPassword: true
+
+  serviceAnnotations:
+    io.cilium/lb-ipam-ips: "192.168.178.224"
+
+  persistence:
+    dataDir:
+      enabled: true
+      Size: "10Gi"
+
+  extraEnv:
+    ENABLE_WHITELIST: "true"
+    ENFORCE_WHITELIST: "true"
+
+  resources:
+    requests:
+      cpu: "1"
+      memory: "7Gi"
+    limits:
+      memory: "7Gi"
