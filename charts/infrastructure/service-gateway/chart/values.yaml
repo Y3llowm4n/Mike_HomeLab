@@ -16,6 +16,6 @@ routes:
     backendServicePort: 80
   - name: jellyfin
     staticIP: "192.168.178.225"
-    backendNamespace: jellyfin
+    backendNamespace: media
     backendServiceName: jellyfin
-    backendServicePort: 80
+    backendServicePort: 8096
