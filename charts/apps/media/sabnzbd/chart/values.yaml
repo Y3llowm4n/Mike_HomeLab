@@ -1,0 +1,21 @@
+image:
+  repository: lscr.io/linuxserver/sabnzbd
+  tag: latest
+
+puid: "1000"
+pgid: "1000"
+
+persistence:
+  config:
+    size: 2Gi
+  incompleteDownloads:
+    size: 10Gi
+
+mediaExistingClaim: jellyfin-media
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    memory: 1Gi
