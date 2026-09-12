@@ -1,3 +1,25 @@
 gateway-helm:
   service:
     type: ClusterIP
+
+routes:
+  - name: argocd
+    staticIP: "192.168.178.221"
+    backendNamespace: argocd
+    backendServiceName: argocd-server
+    backendServicePort: 80
+  - name: longhorn
+    staticIP: "192.168.178.222"
+    backendNamespace: longhorn-system
+    backendServiceName: longhorn-frontend
+    backendServicePort: 80
+  - name: adguard-home
+    staticIP: "192.168.178.223"
+    backendNamespace: adguard-home
+    backendServiceName: adguard-home-web
+    backendServicePort: 80
+  - name: jellyfin
+    staticIP: "192.168.178.225"
+    backendNamespace: media
+    backendServiceName: jellyfin
+    backendServicePort: 8096

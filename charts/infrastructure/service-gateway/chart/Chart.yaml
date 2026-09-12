@@ -1,5 +1,0 @@
-apiVersion: v2
-name: service-gateway
-description: Per-service Envoy Gateways with dedicated Cilium L2 IPs
-type: application
-version: 0.1.0
