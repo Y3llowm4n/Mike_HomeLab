@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
     targetRevision: main
-    path: charts/apps/jellyfin/chart
+    path: charts/apps/media/jellyfin/chart
     helm:
       valueFiles:
         - values.yaml

@@ -23,3 +23,9 @@ routes:
     backendNamespace: media
     backendServiceName: jellyfin
     backendServicePort: 8096
+  - name: sabnzbd
+    staticIP: "192.168.178.226"
+    backendNamespace: media
+    backendServiceName: sabnzbd
+    backendServicePort: 8080
+
