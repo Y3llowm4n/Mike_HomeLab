@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seerr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seerr
+  template:
+    metadata:
+      labels:
+        app: seerr
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: seerr
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: TZ
+              value: "Europe/Amsterdam"
+            - name: PORT
+              value: "5055"
+          ports:
+            - name: http
+              containerPort: 5055
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/config
+              name: config
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: seerr-config

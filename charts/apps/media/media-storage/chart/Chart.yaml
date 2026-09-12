@@ -1,0 +1,5 @@
+apiVersion: v2
+name: media-storage
+description: Shared media storage for the *arr stack
+type: application
+version: 0.1.0

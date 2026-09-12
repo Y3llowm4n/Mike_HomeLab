@@ -11,7 +11,7 @@ persistence:
   incompleteDownloads:
     size: 10Gi
 
-mediaExistingClaim: jellyfin-media
+mediaExistingClaim: media-server-data
 
 resources:
   requests:

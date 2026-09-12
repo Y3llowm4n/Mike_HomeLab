@@ -28,4 +28,29 @@ routes:
     backendNamespace: media
     backendServiceName: sabnzbd
     backendServicePort: 8080
+  - name: sonarr
+    staticIP: "192.168.178.227"
+    backendNamespace: media
+    backendServiceName: sonarr
+    backendServicePort: 8989
+  - name: radarr
+    staticIP: "192.168.178.228"
+    backendNamespace: media
+    backendServiceName: radarr
+    backendServicePort: 7878
+  - name: prowlarr
+    staticIP: "192.168.178.229"
+    backendNamespace: media
+    backendServiceName: prowlarr
+    backendServicePort: 9696
+  - name: bazarr
+    staticIP: "192.168.178.230"
+    backendNamespace: media
+    backendServiceName: bazarr
+    backendServicePort: 6767
+  - name: seerr
+    staticIP: "192.168.178.231"
+    backendNamespace: media
+    backendServiceName: seerr
+    backendServicePort: 5055
 
