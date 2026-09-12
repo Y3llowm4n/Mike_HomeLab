@@ -39,4 +39,4 @@ spec:
             claimName: radarr-config
         - name: media
           persistentVolumeClaim:
-            claimName: media-server-data
+            claimName: media-storage-data

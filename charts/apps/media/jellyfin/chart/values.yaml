@@ -3,7 +3,7 @@ jellyfin:
     config:
       size: "5Gi"
     media:
-      existingClaim: media-server-data
+      existingClaim: media-storage-data
 
   service:
     type: ClusterIP 

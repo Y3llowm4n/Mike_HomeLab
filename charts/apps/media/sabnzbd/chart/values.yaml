@@ -11,7 +11,7 @@ persistence:
   incompleteDownloads:
     size: 10Gi
 
-mediaExistingClaim: media-server-data
+mediaExistingClaim: media-storage-data
 
 resources:
   requests:
