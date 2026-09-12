@@ -1,6 +1,6 @@
 apiVersion: v2
-name: service-gateway
-description: Per-service Envoy Gateway with a dedicated Cilium L2 IP
+name: envoy-gateway
+description: Envoy Gateway controller, plus per-app Gateways/HTTPRoutes with dedicated Cilium L2 IPs
 type: application
 version: 0.1.0
 

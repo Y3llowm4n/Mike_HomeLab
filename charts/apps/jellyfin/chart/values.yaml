@@ -4,6 +4,7 @@ jellyfin:
       size: "5Gi"
     media:
       size: "125Gi"
+      accessMode: ReadWriteMany
 
   service:
     type: ClusterIP 
