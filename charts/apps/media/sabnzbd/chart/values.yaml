@@ -9,7 +9,7 @@ persistence:
   config:
     size: 2Gi
   incompleteDownloads:
-    size: 20Gi
+    size: 10Gi
 
 mediaExistingClaim: media-storage-data
 
