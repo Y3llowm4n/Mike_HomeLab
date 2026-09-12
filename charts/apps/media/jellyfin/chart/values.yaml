@@ -3,8 +3,7 @@ jellyfin:
     config:
       size: "5Gi"
     media:
-      size: "125Gi"
-      accessMode: ReadWriteMany
+      existingClaim: media-server-data
 
   service:
     type: ClusterIP 

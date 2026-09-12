@@ -32,7 +32,7 @@ spec:
             - name: incomplete
               mountPath: /incomplete-downloads
             - name: media
-              mountPath: /downloads
+              mountPath: /data
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
