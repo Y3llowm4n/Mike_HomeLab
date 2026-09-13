@@ -1,25 +1,25 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: minecraft
-  namespace: argocd
-  labels:
-    category: apps
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
-    targetRevision: main
-    path: charts/apps/minecraft/chart
-    helm:
-      valueFiles:
-        - values.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: minecraft
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: minecraft
+#   namespace: argocd
+#   labels:
+#     category: apps
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
+#     targetRevision: main
+#     path: charts/apps/minecraft/chart
+#     helm:
+#       valueFiles:
+#         - values.yaml
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: minecraft
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
