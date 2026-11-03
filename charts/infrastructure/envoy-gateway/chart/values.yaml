@@ -53,4 +53,9 @@ routes:
     backendNamespace: media
     backendServiceName: seerr
     backendServicePort: 5055
+  - name: skyblock-flipper
+    staticIP: "192.168.178.232"
+    backendNamespace: skyblock
+    backendServiceName: skyblock-flipper
+    backendServicePort: 8000
 
