@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skyblock-flipper
+spec:
+  type: ClusterIP
+  selector:
+    app: skyblock-flipper
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000

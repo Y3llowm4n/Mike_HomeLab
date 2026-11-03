@@ -1,0 +1,12 @@
+image:
+  repository: mikegdevops/skyblock-flipper
+  tag: "0.2.0"
+
+# Docker Hub repo is private: pull with this secret (SealedSecret in templates/dockerhub-pull-sealedsecret.yaml)
+imagePullSecret: dockerhub-pull
+
+config:
+  REFRESH_SECONDS: "60"
+  BAZAAR_TAX: "0.0125"       # 1.25%; lower it if you have the Bazaar Flipper account upgrade
+  SALES_WINDOW_HOURS: "48"   # how far back "median sold" looks
+  WATCH_PLAYERS: ""          # default names for the Flippers tab, comma separated
