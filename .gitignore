@@ -1,3 +1,9 @@
 *.lock
 *.tgz
 .claude/
+talos/live/
+talos/rendered/
+talos/secrets.yaml
+talosconfig
+kubeconfig
+backup-*/

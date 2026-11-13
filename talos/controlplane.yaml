@@ -1,0 +1,9 @@
+machine:
+  nodeLabels:
+    node.kubernetes.io/exclude-from-external-load-balancers:
+      $patch: delete
+cluster:
+  allowSchedulingOnControlPlanes: true
+  apiServer:
+    certSANs:
+      - 192.168.178.66
