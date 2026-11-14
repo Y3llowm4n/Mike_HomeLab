@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: {{ $.Values.repoURL }}
     targetRevision: {{ $.Values.targetRevision }}
-    path: {{ $p.path }}
+    path: {{ $p.path | default (printf "products/%s/%s" $group $name) }}
     helm:
       valueFiles:
         - values.yaml
