@@ -1,0 +1,35 @@
+{{- range $group, $products := .Values.products }}
+{{- range $name, $p := $products }}
+{{- if $p.deploy }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $name }}
+  namespace: argocd
+  labels:
+    homelab/group: {{ $group }}
+spec:
+  project: default
+  source:
+    repoURL: {{ $.Values.repoURL }}
+    targetRevision: {{ $.Values.targetRevision }}
+    path: {{ $p.path }}
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ $p.namespace | default $name }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      {{- if $p.serverSideApply }}
+      - ServerSideApply=true
+      {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}

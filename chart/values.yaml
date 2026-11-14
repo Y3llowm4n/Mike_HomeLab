@@ -1,0 +1,74 @@
+repoURL: https://github.com/Y3llowm4n/Mike_HomeLab
+targetRevision: main
+
+products:
+  core:
+    argocd:
+      deploy: true
+      namespace: argocd
+      path: charts/apps/argocd/chart
+    sealed-secrets:
+      deploy: true
+      namespace: sealed-secrets
+      path: charts/infrastructure/sealed-secrets/chart
+  connectivity:
+    cilium:
+      deploy: true
+      namespace: kube-system
+      path: charts/infrastructure/cilium/chart
+      serverSideApply: true
+    coredns:
+      deploy: true
+      namespace: coredns
+      path: charts/infrastructure/coredns/chart
+      serverSideApply: true
+    envoy-gateway:
+      deploy: true
+      namespace: envoy-gateway-system
+      path: charts/infrastructure/envoy-gateway/chart
+      serverSideApply: true
+  media:
+    bazarr:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/bazarr/chart
+    jellyfin:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/jellyfin/chart
+    prowlarr:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/prowlarr/chart
+    radarr:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/radarr/chart
+    sabnzbd:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/sabnzbd/chart
+    seerr:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/seerr/chart
+    sonarr:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/sonarr/chart
+  storage:
+    longhorn:
+      deploy: true
+      namespace: longhorn-system
+      path: charts/infrastructure/longhorn/chart
+    media-storage:
+      deploy: true
+      namespace: media
+      path: charts/apps/media/media-storage/chart
+  apps:
+    skyblock-flipper:
+      deploy: true
+      namespace: skyblock
+      path: charts/apps/skyblock-flipper/chart
+
+  
