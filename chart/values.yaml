@@ -52,5 +52,5 @@ products:
       namespace: media
   apps:
     skyblock-flipper:
-      deploy: true
+      deploy: false
       namespace: skyblock
