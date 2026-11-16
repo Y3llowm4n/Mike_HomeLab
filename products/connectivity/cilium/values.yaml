@@ -1,5 +1,7 @@
 cilium:
 
+  upgradeCompatibility: "1.18"
+  
   kubeProxyReplacement: true
 
   k8sServiceHost: 192.168.178.66
