@@ -58,8 +58,22 @@ talos/
 3. Merge to `main`. Argo CD creates the Application automatically.
 
 The Application path defaults to `products/<group>/<product>`; set `path:` only for exceptions.
-Set `deploy: false` (or remove the entry) to remove an app. Be careful: changing an app's name or
-namespace makes Argo CD delete and recreate its resources, including PVCs.
+### Removing an application
+
+Set `deploy: false` (or remove the entry). This only deletes the Argo CD Application: the generated
+Applications have no `resources-finalizer`, so the app's resources keep running as orphans. Clean them
+up manually:
+
+```bash
+kubectl delete namespace <namespace>                       # everything, including PVCs and their data
+kubectl -n <namespace> delete deployment,service --all     # stop the app, keep the PVCs
+```
+
+This is deliberate: with a finalizer, a typo in an app name would delete all of that app's resources.
+
+**Be careful with namespaces:** changing an app's `namespace` makes Argo CD create everything in the new
+namespace and prune the old one, including PVCs (data loss). SealedSecrets must also be resealed for the
+new namespace.
 
 ## Changing the Talos configuration
 
