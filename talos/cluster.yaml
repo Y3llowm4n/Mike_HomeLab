@@ -15,6 +15,11 @@ machine:
 cluster:
   coreDNS:
     disabled: true
+  network:
+    cni:
+      name: none
+  proxy:
+    disabled: true
 ---
 apiVersion: v1alpha1
 kind: HostnameConfig
