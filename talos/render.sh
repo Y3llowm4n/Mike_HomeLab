@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 
 CLUSTER_NAME=mycluster
 ENDPOINT=https://192.168.178.66:6443
-K8S_VERSION=1.35.0
+K8S_VERSION=1.36.6
 TALOS_VERSION=v1.13
 
 render() {

@@ -104,11 +104,13 @@ talosctl -n <ip> apply-config -f rendered/<node>.yaml --mode=no-reboot    # appl
    `talosctl apply-config --insecure -n <ip> -f rendered/<node>.yaml`
 2. **Bootstrap etcd** (once, on chimchar): `talosctl bootstrap -n 192.168.178.66`, then
    `talosctl kubeconfig -n 192.168.178.66`
-3. **Sealed-secrets key:** `kubectl create namespace sealed-secrets` and
+3. **Cilium** (the cluster has no CNI until this is installed):
+   `helm dependency build products/connectivity/cilium && helm install cilium products/connectivity/cilium -n kube-system`
+4. **Sealed-secrets key:** `kubectl create namespace sealed-secrets` and
    `kubectl apply -f sealed-secrets-key.yaml`, before the controller starts, so existing SealedSecrets
    can be decrypted
-4. **Argo CD:** install it once by hand:
+5. **Argo CD:** install it once by hand:
    `helm dependency build products/core/argocd && helm install argocd products/core/argocd -n argocd --create-namespace`
-5. **Root app:** `kubectl apply -f bootstrap/root-app.yaml`. Argo CD now deploys everything else,
+6. **Root app:** `kubectl apply -f bootstrap/root-app.yaml`. Argo CD now deploys everything else,
    including itself.
-6. **Data:** restore Longhorn volumes from backup.
+7. **Data:** restore Longhorn volumes from backup.
